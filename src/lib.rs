@@ -33,7 +33,7 @@ fn session_type() -> SessionKind {
             _ => SessionKind::X11,
         },
         Err(_) => {
-            if !cfg!(target_os = "macos") {
+            if cfg!(target_os = "macos") {
                 SessionKind::Macos
             } else {
                 SessionKind::X11
